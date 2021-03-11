@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - '3000:3000'
+    networks:
+      - kahoot_clone_net
+  mongodb:
+    image: mongo
+    networks:
+      - kahoot_clone_net
+
+networks:
+  kahoot_clone_net:
+    driver: bridge
