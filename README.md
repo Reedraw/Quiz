@@ -1,6 +1,11 @@
 kahoot-clone-nodejs
 ===
 
+# Deployment Notes:
+1. Create Azure Resource Group
+1. Within the Resource Group create Subscription Plan
+1. Run this command from current folder: `az webapp create --resource-group <resource-group-name> --plan <service-plan-name> --name <application-name> --multicontainer-config-type compose --multicontainer-config-file docker-compose.yml`
+
 ## INSTRUCTIONS
 
 ### Running with Docker
