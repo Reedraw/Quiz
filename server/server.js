@@ -18,7 +18,7 @@ var players = new Players();
 //Mongodb setup
 var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
-var url = "mongodb://mongodb:27017";
+var url = "mongodb+srv://admin:8pll5VNCLZBlvB3k@kahootdb.g7oq70u.mongodb.net/?retryWrites=true&w=majority";
 
 
 
