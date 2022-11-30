@@ -3,7 +3,6 @@ function record(){
     recognition.lang = "en-GB";
     recognition.continuous = true;
     
-    var x = 0;
 
     recognition.onresult = function(event){
         console.log(event);
@@ -28,8 +27,6 @@ function record(){
 
     }
 
-    recognition.start();
-    x += 1;
-
+    recognition.start()
     
 }
