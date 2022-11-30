@@ -1,4 +1,4 @@
-kahoot-clone-nodejs
+Quiz
 ===
 
 ## INSTRUCTIONS
