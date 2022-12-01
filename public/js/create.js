@@ -6,15 +6,15 @@ socket.on('connect', function(){
 
 socket.on('gameNamesData', function(data){
     for(var i = 0; i < Object.keys(data).length; i++){
-        var div = document.getElementById('game-list');
-        var button = document.createElement('button');
+        var div = document.getElementById('game-list'); //Get empty div class from HTML
+        var button = document.createElement('button'); //Creates a button
         
-        button.innerHTML = data[i].name;
-        button.setAttribute('onClick', "startGame('" + data[i].id + "')");
-        button.setAttribute('id', 'gameButton');
+        button.innerHTML = data[i].name; //Button text will be from data name from database
+        button.setAttribute('onClick', "startGame('" + data[i].id + "')"); //onclick will run function
+        button.setAttribute('id', 'gameButton'); //Will be used to link to CSS by setting id
         
-        div.appendChild(button);
-        div.appendChild(document.createElement('br'));
+        div.appendChild(button); //In the empty div class, add button for each quiz made in databse
+        div.appendChild(document.createElement('br')); //Produces a line break in HTML
         div.appendChild(document.createElement('br'));
     }
 });

@@ -35,7 +35,7 @@ io.on('connection', (socket) => {
     //When host connects for the first time
     socket.on('host-join', (data) =>{
         
-        //Check to see if id passed in url corresponds to id of kahoot game in database
+        //Check to see if id passed in url corresponds to id of quiz in database
         MongoClient.connect(url, function(err, db) {
             if (err) throw err;
             var dbo = db.db("kahootDB");
@@ -43,7 +43,7 @@ io.on('connection', (socket) => {
             dbo.collection('kahootGames').find(query).toArray(function(err, result){
                 if(err) throw err;
                 
-                //A kahoot was found with the id passed in url
+                //A Quiz was found with the id passed in url
                 if(result[0] !== undefined){
                     var gamePin = Math.floor(Math.random()*90000) + 10000; //new pin for game
 

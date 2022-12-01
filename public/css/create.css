@@ -26,28 +26,34 @@ body {
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
 }
+/*Links to header1 in HTML Page*/
 #title{
-    color: white;
-    text-align: center;
+    color: white; /*Text colour is white*/
+    text-align: center; /*Placement will be in the centre of the page*/
     font-size: 50px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif; /*From the imported FONT*/
 }
+/*Link to header5 in HTML*/
 #subtitle{
-    color: white;
-    text-align: center;
+    color: white; /*Text colour*/
+    text-align: center; /*Text-alignment*/
     font-size: 20px;
     font-family: 'Raleway', sans-serif;
 }
+/*Link to Anchor in HTML*/
 #link{
-    color: white;
+    color: white; /*Text colour*/
 }
+/*Link to empty div class in HTML*/
 #game-list{
-    text-align: center;
+    text-align: center; /*Aligned to the centre of page*/
 }
+/*Link to back anchor in HTML*/
 #back{
     color: white;
     text-align: center;
 }
+/*The gamebutton will be made within the JS*/
 #gameButton{
     font-size:80px;
 }
