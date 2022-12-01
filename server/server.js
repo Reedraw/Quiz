@@ -38,9 +38,9 @@ io.on('connection', (socket) => {
         //Check to see if id passed in url corresponds to id of quiz in database
         MongoClient.connect(url, function(err, db) {
             if (err) throw err;
-            var dbo = db.db("kahootDB");
+            var dbo = db.db("kahootDB"); //Find Database
             var query = { id:  parseInt(data.id)};
-            dbo.collection('kahootGames').find(query).toArray(function(err, result){
+            dbo.collection('kahootGames').find(query).toArray(function(err, result){ //Find collection in database with id
                 if(err) throw err;
                 
                 //A Quiz was found with the id passed in url
@@ -187,7 +187,7 @@ io.on('connection', (socket) => {
 
                 io.to(game.pin).emit('hostDisconnect'); //Send player back to 'join' screen
                 socket.leave(game.pin); //Socket is leaving room
-            }
+            }   
         }else{
             //No game has been found, so it is a player socket that has disconnected
             var player = players.getPlayer(socket.id); //Getting player with socket.id
@@ -262,7 +262,7 @@ io.on('connection', (socket) => {
     
     socket.on('getScore', function(){
         var player = players.getPlayer(socket.id);
-        socket.emit('newScore', player.gameData.score); 
+        socket.emit('newScore', player.gameData.score); //Sends game data score
     });
     
     socket.on('time', function(data){
@@ -310,7 +310,7 @@ io.on('connection', (socket) => {
         var game = games.getGame(socket.id);
         game.gameData.playersAnswered = 0;
         game.gameData.questionLive = true;
-        game.gameData.question += 1;
+        game.gameData.question += 1;    
         var gameid = game.gameData.gameid;
         
         
