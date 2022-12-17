@@ -26,10 +26,10 @@ socket.on('gameQuestions', function(data){
     } else{
         console.log("Text-to-Speech is not supported")
     }
-    document.getElementById('answer1').innerHTML = data.a1; //Change value of answer input 1
-    document.getElementById('answer2').innerHTML = data.a2; //Change value of answer input 1
-    document.getElementById('answer3').innerHTML = data.a3; //Change value of answer input 1
-    document.getElementById('answer4').innerHTML = data.a4; //Change value of answer input 1
+    document.getElementById('answer1').innerHTML = data.a1; //Change value of answer1 input 
+    document.getElementById('answer2').innerHTML = data.a2; //Change value of answer2 input 
+    document.getElementById('answer3').innerHTML = data.a3; //Change value of answer3 input 
+    document.getElementById('answer4').innerHTML = data.a4; //Change value of answer4 input 
     var correctAnswer = data.correct;
     document.getElementById('playersAnswered').innerHTML = "Players Answered 0 / " + data.playersInGame; //Change value of how many players have answered
     updateTimer(); //Run the update timer function
