@@ -18,14 +18,21 @@ socket.on('noGameFound', function(){
 });
 
 socket.on('gameQuestions', function(data){
-    document.getElementById('question').innerHTML = data.q1;
-    document.getElementById('answer1').innerHTML = data.a1;
-    document.getElementById('answer2').innerHTML = data.a2;
-    document.getElementById('answer3').innerHTML = data.a3;
-    document.getElementById('answer4').innerHTML = data.a4;
+    document.getElementById('question').innerHTML = data.q1; //To change the value of the question
+    if ('speechSynthesis' in window){
+        console.log(data.q1)
+        const utterance = new SpeechSynthesisUtterance(data.q1);
+        speechSynthesis.speak(utterance);
+    } else{
+        console.log("Text-to-Speech is not supported")
+    }
+    document.getElementById('answer1').innerHTML = data.a1; //Change value of answer input 1
+    document.getElementById('answer2').innerHTML = data.a2; //Change value of answer input 1
+    document.getElementById('answer3').innerHTML = data.a3; //Change value of answer input 1
+    document.getElementById('answer4').innerHTML = data.a4; //Change value of answer input 1
     var correctAnswer = data.correct;
-    document.getElementById('playersAnswered').innerHTML = "Players Answered 0 / " + data.playersInGame;
-    updateTimer();
+    document.getElementById('playersAnswered').innerHTML = "Players Answered 0 / " + data.playersInGame; //Change value of how many players have answered
+    updateTimer(); //Run the update timer function
 });
 
 socket.on('updatePlayersAnswered', function(data){
