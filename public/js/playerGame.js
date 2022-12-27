@@ -99,5 +99,7 @@ socket.on('GameOver', function(){
     document.getElementById('answer4').style.visibility = "hidden";
     document.getElementById('message').style.display = "block";
     document.getElementById('message').innerHTML = "GAME OVER";
+    document.getElementById('back').style.visibility = "visible";
+
 });
 

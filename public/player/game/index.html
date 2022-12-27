@@ -11,6 +11,10 @@
         <label for="Speech Recognition">Speech Recognition</label>
         <input type="text" name="" id="speechToText" placeholder="Say Something" onclick=record()>
 
+        <a id = "back" style = "position:absolute; right: 0; top: 0; color: black; font-size: medium; visibility: hidden;" href = "http://192.168.0.5:3000/">
+            Back to Home
+        </a>
+
         <div id = "stats">
             <h4 id = "nameText">Name: </h4>
             <h4 id = "scoreText">Score: </h4>
@@ -22,6 +26,7 @@
         <br>
         <button onclick = "answerSubmitted(3)" id = "answer3" class = "button"></button>
         <button onclick = "answerSubmitted(4)" id = "answer4" class = "button"></button>
+
 
         <script src = "../../socket.io/socket.io.js"></script>
         <script src = "../../js/libs/jqueryLibrary.js"></script>
